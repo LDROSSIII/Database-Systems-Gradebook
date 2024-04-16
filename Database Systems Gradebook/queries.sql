@@ -24,7 +24,7 @@ WHERE a.CRS_NUM = 432;
 
 INSERT INTO Assignment
 VALUES
-(2004, 'Final', 100, (SELECT CATEGORY_ID from CATEGORY WHERE CATEGORY_TYPE = 'Final Exam'));
+(2006, 'Project', 75, (SELECT CATEGORY_ID from CATEGORY WHERE CATEGORY_TYPE = 'Project and participation'), (SELECT CRS_NUM from COURSE WHERE CRS_NAME = 'Database Systems'));
 
 /*Change the percentages of the categories for a course*/
 

@@ -1,6 +1,6 @@
 INSERT INTO PROFESSOR
 VALUES
-    (1001, Chunmei, Liu);
+    (1001, 'Chunmei', 'Liu');
 
 INSERT INTO COURSE
 VALUES

@@ -20,8 +20,8 @@ SELECT Student.Student_ID, Student.fname from STUDENT s JOIN ENROLLMENT e where 
 
 /*Add an assignment to a course*/
 
-INSERT INTO Assignment (course_id, name, total_points, due_date)
-VALUES (<course_id>, 'New Assignment', <total_points>, 'YYYY-MM-DD');
+INSERT INTO Assignment (category_id, course_id, assignment_name, due_date, max_points)
+VALUES ([category_id], [course_id], '[assignment_name]', '[due_date]', [max_points]);
 
 /*Change the percentages of the categories for a course*/
 

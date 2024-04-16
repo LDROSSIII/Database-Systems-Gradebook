@@ -43,15 +43,19 @@ UPDATE Score
 SET Score = Score + 2
 WHERE Assignment_ID = 1;
 
-/* Compute student grade with lowest score dropped*/
+/* Compute student grade with the lowest score dropped*/
 
-SELECT SUM(score * weight / total_points) * 100 AS Grade
-FROM (
-    SELECT g.*, c.weight, a.total_points,
-            ROW_NUMBER() OVER (PARTITION BY a.category_id ORDER BY score ASC) AS row_num
-    FROM Grade g
-    JOIN Assignment a ON g.assignment_ID = a.assignment_ID
-    JOIN Category c ON a.Category_ID = c.Category_ID
-    WHERE g.Student_ID = <student_id>
-) AS ranked
-WHERE row_num > 1;
+WITH MinScores AS (
+  SELECT Student_ID, category_ID, MIN(score) AS min_score
+  FROM Grade
+  GROUP BY Student_ID, category_ID
+)
+SELECT s.fname, s.lname, 
+       SUM(CASE WHEN g.score > ms.min_score THEN g.score * c.weight ELSE 0 END) / SUM(c.weight) AS total_grade
+FROM Student s
+JOIN Grade g ON s.Student_ID = g.Student_ID
+JOIN Assignment a ON g.assignment_ID = a.assignment_ID
+JOIN Category c ON a.category_ID = c.category_ID
+JOIN MinScores ms ON g.Student_ID = ms.Student_ID AND g.category_ID = ms.category_ID
+WHERE g.Course_ID = [Course_ID]
+GROUP BY s.Student_ID;

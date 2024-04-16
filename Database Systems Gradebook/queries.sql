@@ -48,14 +48,15 @@ WHERE Assignment_ID = 2002;
 
 /* Compute student grade */
 SELECT s.Student_ID, s.student_fname, s.student_lname,
-       SUM(gr.Score * (CASE a.Category
-                       WHEN 'Assignments' THEN c.category_weight
-                       WHEN 'Project and participation' THEN c.category_weight
-                       WHEN 'Midterm exam' THEN c.category_weight
-                       WHEN 'Final Exam' THEN c.category_weight
+       SUM(gr.Score * (CASE cat.CATEGORY_TYPE
+                       WHEN 'Assignments' THEN cat.category_weight
+                       WHEN 'Project and participation' THEN cat.category_weight
+                       WHEN 'Midterm exam' THEN cat.category_weight
+                       WHEN 'Final Exam' THEN cat.category_weight
                        ELSE 0
                        END) / a.Max_Score) as Grade
 FROM Student s
+FROM Category cat
 JOIN Grade gr ON s.Student_ID = gr.Student_ID
 JOIN Assignment a ON a.Assignment_ID = sc.Assignment_ID
 JOIN Course c ON a.CRS_NUM = c.CRS_NUM

@@ -43,7 +43,7 @@ UPDATE Score
 SET Score = Score + 2
 WHERE Assignment_ID = 1;
 
-/* Compute student grade */
+/* Compute student grade with lowest score dropped*/
 
 SELECT SUM(score * weight / total_points) * 100 AS Grade
 FROM (

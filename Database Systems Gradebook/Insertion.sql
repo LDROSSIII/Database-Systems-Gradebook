@@ -10,7 +10,7 @@ INSERT INTO STUDENT
 VALUES
     (02998013, 'Logan', 'Ross'),
     (02998014, 'Khloe', 'Wright'),
-    (02998015, 'Sara', 'Kanu');
+    (02998015, 'Sara', 'Kanu'),
     (02998015, 'Quincy', 'Adams');
 
 INSERT INTO ENROLLMENT

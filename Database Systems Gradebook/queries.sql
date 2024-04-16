@@ -16,9 +16,9 @@ JOIN Enrollment ON Student.student_id = Enrollment.student_id WHERE Enrollment.c
 /*List all of the students in a course and all of their scores on every assignment*/
 SELECT s.Student_ID, a.Assignment_name, gr.score
 FROM Grade gr
-JOIN Assignments a ON gr.Assignment_ID = a.Assignment_ID
+JOIN Assignment a ON gr.Assignment_ID = a.Assignment_ID
 JOIN Student s ON gr.Student_ID = s.Student_ID
-WHERE a.Course_ID = 1;
+WHERE a.CRS_NUM = 432;
 
 /*Add an assignment to a course*/
 
@@ -42,9 +42,9 @@ WHERE Assignment_ID = 1 AND Student_ID IN (
 
 /* update score for an assignment each student 2 points 8 */
 
-UPDATE Score
+UPDATE GRADE
 SET Score = Score + 2
-WHERE Assignment_ID = 1;
+WHERE Assignment_ID = 2002;
 
 /* Compute student grade with the lowest score dropped*/
 

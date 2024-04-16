@@ -14,9 +14,11 @@ SELECT Student.student_ID, student_fname, student_lname FROM Student
 JOIN Enrollment ON Student.student_id = Enrollment.student_id WHERE Enrollment.crs_num = 432;
 
 /*List all of the students in a course and all of their scores on every assignment*/
-
-SELECT Student.fname from Student s where Student.Student_ID in (select e.student_ID from ENROLLMENT e where e.Course_ID = 432;
-SELECT Student.Student_ID, Student.fname from STUDENT s JOIN ENROLLMENT e where e.Course_ID = 432 and Student.Student_ID = e.Student_ID;
+SELECT s.Student_ID, a.Assignment_name, gr.score
+FROM Grade gr
+JOIN Assignments a ON gr.Assignment_ID = a.Assignment_ID
+JOIN Student s ON gr.Student_ID = s.Student_ID
+WHERE a.Course_ID = 1;
 
 /*Add an assignment to a course*/
 

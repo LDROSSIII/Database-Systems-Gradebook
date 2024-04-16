@@ -10,7 +10,7 @@ FROM GRADE WHERE assignment_id = 2003;
 
 /* list all of the students in given course */
 
-SELECT Student.student_ID, Student.student_fname, Student.student_lname FROM Student
+SELECT Student.student_ID, student_fname, student_lname FROM Student
 JOIN Enrollment ON Student.student_id = Enrollment.student_id WHERE Enrollment.crs_num = 432;
 
 /*List all of the students in a course and all of their scores on every assignment*/
@@ -27,8 +27,8 @@ VALUES
 /*Change the percentages of the categories for a course*/
 
 UPDATE Category
-SET weight = <new_weight>
-WHERE category_id = <category_id>; 
+SET category_weight = 45
+WHERE category_id = (SELECT CATEGORY_ID from CATEGORY WHERE CATEGORY_TYPE = 'Final Exam'); 
 
 /* add two points to students course that name contains 'Q' */
 

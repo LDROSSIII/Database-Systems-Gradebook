@@ -15,8 +15,8 @@ JOIN Enrollment ON Student.student_id = Enrollment.student_id WHERE Enrollment.c
 
 /*List all of the students in a course and all of their scores on every assignment*/
 
-SELECT Student.fname from Student s where Student.Student_ID in (select e.student_ID from ENROLLMENT e where e.Course_ID = 1;
-SELECT Student.Student_ID, Student.fname from STUDENT s JOIN ENROLLMENT e where e.Course_ID = 1 and Student.Student_ID = e.Student_ID;
+SELECT Student.fname from Student s where Student.Student_ID in (select e.student_ID from ENROLLMENT e where e.Course_ID = 432;
+SELECT Student.Student_ID, Student.fname from STUDENT s JOIN ENROLLMENT e where e.Course_ID = 432 and Student.Student_ID = e.Student_ID;
 
 /*Add an assignment to a course*/
 

@@ -46,6 +46,22 @@ UPDATE GRADE
 SET Score = Score + 2
 WHERE Assignment_ID = 2002;
 
+/* Compute student grade */
+SELECT s.Student_ID, s.student_fname, s.student_lname,
+       SUM(gr.Score * (CASE a.Category
+                       WHEN 'Assignments' THEN c.category_weight
+                       WHEN 'Project and participation' THEN c.category_weight
+                       WHEN 'Midterm exam' THEN c.category_weight
+                       WHEN 'Final Exam' THEN c.category_weight
+                       ELSE 0
+                       END) / a.Max_Score) as Grade
+FROM Student s
+JOIN Grade gr ON s.Student_ID = gr.Student_ID
+JOIN Assignment a ON a.Assignment_ID = sc.Assignment_ID
+JOIN Course c ON a.CRS_NUM = c.CRS_NUM
+WHERE s.Student_ID = 1 AND c.CRS_NUM = 432
+GROUP BY s.Student_ID, s.student_fname, s.student_lname;
+
 /* Compute student grade with the lowest score dropped*/
 
 WITH MinScores AS (

@@ -1,12 +1,12 @@
 /* computing average/min/max of score of an assignment */
 SELECT AVG(SCORE)
-FROM GRADE WHERE assignment_id = 1;
+FROM GRADE WHERE assignment_id = 2001;
 
 SELECT MIN(SCORE)
-FROM GRADE WHERE assignment_id = 2;
+FROM GRADE WHERE assignment_id = 2002;
 
 SELECT MAX(SCORE)
-FROM GRADE WHERE assignment_id = 3;
+FROM GRADE WHERE assignment_id = 2003;
 
 /* list all of the students in given course */
 

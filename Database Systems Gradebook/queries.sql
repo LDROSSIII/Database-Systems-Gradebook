@@ -34,10 +34,10 @@ WHERE category_id = (SELECT CATEGORY_ID from CATEGORY WHERE CATEGORY_TYPE = 'Fin
 
 /* add two points to students course that name contains 'Q' */
 
-UPDATE Score
+UPDATE GRADE
 SET Score = Score + 2
-WHERE Assignment_ID = 1 AND Student_ID IN (
-    SELECT Student_ID FROM Student WHERE LName LIKE '%Q%'
+WHERE Assignment_ID = 2003 AND Student_ID IN (
+    SELECT Student_ID FROM Student WHERE student_fname LIKE '%Q%' or student_lname LIKE '%Q%'
 );
 
 /* update score for an assignment each student 2 points 8 */

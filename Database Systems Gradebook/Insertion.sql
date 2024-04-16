@@ -31,7 +31,9 @@ INSERT INTO ASSIGNMENT
 VALUES
     (2001, 'Homework 1', 50, (SELECT CATEGORY_ID from CATEGORY WHERE CATEGORY_TYPE = 'Assignments'), (SELECT CRS_NUM from COURSE WHERE CRS_NAME = 'Database Systems')),
     (2002, 'Homework 2', 100, (SELECT CATEGORY_ID from CATEGORY WHERE CATEGORY_TYPE = 'Assignments'), (SELECT CRS_NUM from COURSE WHERE CRS_NAME = 'Database Systems')),
-    (2003, 'Midterm', 100, (SELECT CATEGORY_ID from CATEGORY WHERE CATEGORY_TYPE = 'Midterm exam'), (SELECT CRS_NUM from COURSE WHERE CRS_NAME = 'Database Systems'));
+    (2003, 'Midterm', 100, (SELECT CATEGORY_ID from CATEGORY WHERE CATEGORY_TYPE = 'Midterm exam'), (SELECT CRS_NUM from COURSE WHERE CRS_NAME = 'Database Systems')),
+    (2004, 'Participation', 25, (SELECT CATEGORY_ID from CATEGORY WHERE CATEGORY_TYPE = 'Project and participation'), (SELECT CRS_NUM from COURSE WHERE CRS_NAME = 'Database Systems')),
+    (2005, 'Final', 100, (SELECT CATEGORY_ID from CATEGORY WHERE CATEGORY_TYPE = 'Final Exam'), (SELECT CRS_NUM from COURSE WHERE CRS_NAME = 'Database Systems'));
 
 INSERT INTO GRADE
 VALUES

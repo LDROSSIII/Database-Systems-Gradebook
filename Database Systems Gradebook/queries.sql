@@ -10,8 +10,8 @@ FROM GRADE WHERE assignment_id = 2003;
 
 /* list all of the students in given course */
 
-SELECT Student.student_ID, Student.fname, Student.lname FROM Student
-JOIN Enroll ON Student.student_id = Enroll.student_id WHERE Enroll.course_id = 2;
+SELECT Student.student_ID, Student.student_fname, Student.student_lname FROM Student
+JOIN Enrollment ON Student.student_id = Enrollment.student_id WHERE Enrollment.crs_num = 432;
 
 /*List all of the students in a course and all of their scores on every assignment*/
 

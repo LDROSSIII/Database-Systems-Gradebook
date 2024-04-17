@@ -6,5 +6,5 @@ First, we access [Programiz's Online SQL Editor](https://www.programiz.com/sql/o
 Then...
 - Copy and paste Gradebook.sql file (Creates Tables)
 - Copy and paste Insertion.sql (Inserts Data Into Tables)
-- Copy and paste each query one by one (Queries are separated by commas in the 'queries.sql' file)
+- Copy and paste each query one by one (Queries are separated by comments in the 'queries.sql' file)
   

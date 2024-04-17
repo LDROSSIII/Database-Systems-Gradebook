@@ -3,10 +3,10 @@ SELECT AVG(SCORE)
 FROM GRADE WHERE assignment_id = 2001;
 
 SELECT MIN(SCORE)
-FROM GRADE WHERE assignment_id = 2002;
+FROM GRADE WHERE assignment_id = 2001;
 
 SELECT MAX(SCORE)
-FROM GRADE WHERE assignment_id = 2003;
+FROM GRADE WHERE assignment_id = 2001;
 
 /* list all of the students in given course */
 
